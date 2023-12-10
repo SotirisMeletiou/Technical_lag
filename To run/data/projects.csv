@@ -1,0 +1,18 @@
+ID,Name,Created Timestamp,Description,Homepage URL,Repository URL
+2479930,edge-currency-bitcoin,2017-10-09 14:00:44 UTC,Edge Bitcoin currency plugin,https://edge.app,https://github.com/Airbitz/edge-currency-bitcoin
+2480837,atomic-reactor,2017-10-09 14:06:30 UTC,Atomic Jolt's React build tool,https://github.com/atomicjolt/atomic-reactor,https://github.com/atomicjolt/atomic-reactor
+2696921,revolsys-angular-framework,2018-03-21 00:31:35 UTC,Components to use with the Angular Framework,https://github.com/revolsys/revolsys-angular-framework,https://github.com/revolsys/revolsys-angular-framework
+2723152,kiaba-react-scripts,2018-04-11 00:45:29 UTC,Configuration and scripts for Create React App.,https://github.com/facebookincubator/create-react-app,https://github.com/facebookincubator/create-react-app
+2740685,terra-abstract-modal,2018-04-20 15:51:58 UTC,The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app.,https://github.com/cerner/terra-framework,https://github.com/cerner/terra-framework
+2762259,discord-ribbon,2018-04-29 17:19:02 UTC,"feature rich, modular Discord.JS-Commando server bot written in TypeScript",https://favna.xyz/ribbon,https://github.com/favna/ribbon
+2767346,harmonium,2018-05-02 00:22:56 UTC,An opinionated React component framework for teams that move fast.,https://github.com/revelrylabs/harmonium,https://github.com/revelrylabs/harmonium
+2810152,byted-react-scripts,2018-05-14 07:20:56 UTC,Fork from Create React App.,https://github.com/facebook/create-react-app,https://github.com/facebook/create-react-app
+2812803,vandelay,2018-05-15 15:47:29 UTC,"Imports, exports, and ETL",https://github.com/staeco/vandelay,https://github.com/staeco/vandelay
+2828380,directory-command,2018-05-21 03:38:25 UTC,use directory structure to define commands and subcommands of a command-line tool,https://github.com/sethvincent/directory-command,https://github.com/sethvincent/directory-command
+2892823,steem-wise-core,2018-06-04 10:03:49 UTC,Node/web library for Wise: a vote delegation system for STEEM blockchain,https://wise.vote/,https://github.com/wise-team/steem-wise-core
+2926234,ccxt-rest,2018-06-09 22:29:09 UTC,Open Source Unified REST API of 100+ Crypto Exchange Sites,https://ccxt-rest.io,https://github.com/ccxt-rest/ccxt-rest
+2951384,generator-astro,2018-06-12 10:59:09 UTC,Yeoman generator for Astro ExpressJS API,https://github.com/azanium/generator-astro,https://github.com/azanium/generator-astro
+3144939,semantic-ui-css-magalu,2018-07-03 06:18:02 UTC,Semantic empowers designers and developers by creating a shared vocabulary for UI.,http://www.semantic-ui.com,https://github.com/luizalabs/Semantic-UI
+3187624,inschpektor,2018-07-27 00:31:53 UTC,An IOTA neighbor manager for your node.,https://github.com/codepleb/inschpektor,https://github.com/codepleb/inschpektor
+3276488,simpli-web-sdk,2018-09-28 19:53:54 UTC,A framework to easily build projects in Vue,https://github.com/simplitech/simpli-web-sdk,https://github.com/simplitech/simpli-web-sdk
+3429897,secondwheel,2018-12-02 00:09:09 UTC,unopinionated library of functions for those tired of reinventing the wheel,https://thealjey.github.io/secondwheel/,https://github.com/thealjey/secondwheel

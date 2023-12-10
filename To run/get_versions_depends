@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Check if the input file exists
+input_file="dates.txt"
+
+if [ ! -f "$input_file" ]; then
+  echo "Error: $input_file not found."
+  exit 1
+fi
+
+# Directory where version txt files are stored
+versions_dir="clean_versions_of_depends"
+
+# Loop through each line in the file
+while IFS= read -r line; do
+  # Use 'awk' to extract version from column 3, and date and time from columns 4 and 5
+  version=$(echo "$line" | awk '{print $3}')
+  datetime=$(echo "$line" | awk '{print $4, $5}')
+  
+  # Create a new output file for each version
+  output_file="./all_dependency_versions/${version}.vd.txt"
+  touch "$output_file"
+
+  # Loop through all txt files in the "cleanversions" folder
+  for txt_file in "${versions_dir}/${version}.txt"; do
+    if [ -f "$txt_file" ]; then
+      # Extract project IDs (12th column) from the txt file and search in "data.csv"
+      project_ids=$(awk '{print $12}' "$txt_file")
+      for project_id in $project_ids; do
+        # Search for rows in "data.csv" where column 4 matches the project_id and column 6 is before the datetime
+        awk -F ',' -v project_id="$project_id" -v datetime="$datetime" '$4 == project_id && $6 <= datetime' ./data/versions.csv >> "$output_file"
+      done
+    fi
+  done
+
+  # Notify completion for the current version
+  echo "Processed $version and saved data in $output_file"
+done < "$input_file"
+

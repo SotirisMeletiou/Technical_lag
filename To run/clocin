@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Define the directory where the .tgz files are located
+install_dir="$HOME/Project484/kiaba_versions"
+
+# Define the directory where the .txt output files will be saved (in your home directory)
+output_dir="$HOME/Project484/cloc_results"
+
+# Check if the install directory exists
+if [ ! -d "$install_dir" ]; then
+    echo "Installation directory '$install_dir' not found."
+    exit 1
+fi
+
+# Check if the 'cloc' command is available
+if ! command -v cloc &> /dev/null; then
+    echo "cloc command not found. Please install it."
+    exit 1
+fi
+
+# Create the output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Process all .tgz files in the directory
+for file in "$install_dir"/*.tgz; do
+    if [ -f "$file" ]; then
+        # Extract the file name (without extension)
+        filename=$(basename -- "$file")
+        filename_noext="${filename%.*}"
+
+        # Run 'cloc' and save the output to a text file in the output directory
+        cloc "$file" > "$output_dir/$filename_noext.txt"
+    fi
+done
+

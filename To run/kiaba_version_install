@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <input_csv_file>"
+    exit 1
+fi
+
+input_csv_file="$1"
+
+# Check if the input CSV file exists
+if [ ! -f "$input_csv_file" ]; then
+    echo "Input file '$input_csv_file' not found."
+    exit 1
+fi
+
+# Define the search criteria
+search_number=2723152
+
+# Define the directory where the URLs will be installed
+install_dir="$HOME/Project484/kiaba_versions"
+
+# Create the installation directory if it doesn't exist
+mkdir -p "$install_dir"
+
+# Process the CSV file
+while IFS=',' read -r -a line; do
+    if [ "${line[3]}" == "$search_number" ]; then
+        link="${line[8]}"
+        # Use wget to download the content from the URL in the 9th column
+        wget -N "$link" -P "$install_dir"
+        if [ $? -eq 0 ]; then
+            echo "Downloaded: $link"
+        else
+            echo "Failed to download: $link"
+        fi
+    fi
+done < "$input_csv_file"
+

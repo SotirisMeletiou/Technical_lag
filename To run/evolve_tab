@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Define the directory where the text files are located
+js_dir="$HOME/Project484/JsFiles"
+
+# Define the output file
+output_file="$./evolve.txt"
+
+# Create the output file
+> "$output_file"
+
+# Process all .txt files in the JsFiles directory
+for file in "$js_dir"/*.txt; do
+    if [ -f "$file" ]; then
+        # Extract the version from the file name
+        filename=$(basename -- "$file")
+        version=$(echo "$filename" | sed -n 's/.*-\([0-9.]\+\)\.txt/\1/p')
+
+        # Extract the number of files and LOC from the content
+        num_files=$(cat "$file" | tr -s ' ' | cut -d ' ' -f 2)
+        loc=$(cat "$file" | tr -s ' ' | cut -d ' ' -f 5)
+
+        # Append the information to the output file
+        echo "$version $num_files $loc" >> "$output_file"
+    fi
+done
+

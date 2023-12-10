@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Set the folder where your TXT files are located
+input_folder="./dependencies"
+# Create a folder to store clean versions
+output_folder="./clean_versions_of_depend"
+
+# Ensure the output folder exists or create it
+mkdir -p "$output_folder"
+
+# Loop through TXT files in the input folder
+for txt_file in "$input_folder"/*.txt; do
+  if [ -e "$txt_file" ]; then
+    # Determine the output file path
+    output_file="$output_folder/$(basename "$txt_file")"
+
+    # Use awk to process the TXT file and save the output to a new file
+    awk 'BEGIN {OFS=" "} {
+      # Check if column 11 contains a dash and remove it along with everything that follows
+      if ($11 ~ /-/) {
+        sub(/-.*/, "", $11)
+      }
+      print
+    }' "$txt_file" > "$output_file"
+  fi
+done
+

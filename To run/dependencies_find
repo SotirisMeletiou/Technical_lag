@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <input_csv_file>"
+    exit 1
+fi
+
+input_csv_file="$1"
+
+# Check if the input CSV file exists
+if [ ! -f "$input_csv_file" ]; then
+    echo "Input file '$input_csv_file' not found."
+    exit 1
+fi
+
+# Define the 4th column number to consider (3rd column, 0-based index)
+column_4_number=3
+
+# Define the 5th column number to consider (4th column, 0-based index)
+column_5_number=4
+
+# Define the directory where the text files will be saved
+output_dir="$HOME/Project484/dependencies"
+
+# Create the output directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Process the CSV file
+while IFS=',' read -r -a line; do
+    number_4="${line[$column_4_number]}"
+    number_5="${line[$column_5_number]}"
+    
+    if [[ -n "$number_4" && "$number_4" == "2723152" && -n "$number_5" ]]; then
+        # Create a unique text file for each number in the output directory
+        output_file="$output_dir/$number_5.txt"
+        # Append the entire row to the text file
+        echo "${line[*]}" >> "$output_file"
+    fi
+done < "$input_csv_file"
+

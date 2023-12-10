@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Define the directory where the .txt files are located
+output_dir="$HOME/Project484/cloc_results"
+
+# Define the directory where JavaScript-related files will be saved
+js_dir="$HOME/Project484/JsFiles"
+
+# Check if the output directory exists
+if [ ! -d "$output_dir" ]; then
+    echo "Output directory '$output_dir' not found."
+    exit 1
+fi
+
+# Create the JavaScript directory if it doesn't exist
+mkdir -p "$js_dir"
+
+# Process all .txt files in the output directory
+for file in "$output_dir"/*.txt; do
+    if [ -f "$file" ]; then
+        # Extract the file name (without extension)
+        filename=$(basename -- "$file")
+        filename_noext="${filename%.*}"
+
+        # Search for the line starting with "JavaScript"
+        javascript_line=$(grep "^JavaScript" "$file")
+
+        if [ -n "$javascript_line" ]; then
+            # Create a new text file in the JavaScript directory with the JavaScript-related content
+            echo "$javascript_line" > "$js_dir/$filename_noext.txt"
+        fi
+    fi
+done
+

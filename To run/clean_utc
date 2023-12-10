@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check if the directory path is provided as an argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+directory="$1"
+
+# Check if the directory exists
+if [ ! -d "$directory" ]; then
+    echo "Directory not found: $directory"
+    exit 1
+fi
+
+# Loop through all .txt files in the directory and remove "UTC" and the space
+for file in "$directory"/*.txt; do
+    if [ -f "$file" ]; then
+        echo "Processing file: $file"
+        sed -i 's/ UTC//g' "$file"
+    fi
+done
+
+echo "Finished removing 'UTC' and the space from all .txt files in $directory"
+
