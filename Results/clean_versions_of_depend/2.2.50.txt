@@ -1,0 +1,4 @@
+77162194 NPM kiaba-react-scripts 2723152 2.2.50 12783096 autoprefixer NPM runtime False 7.1.6 129882.0
+77162101 NPM kiaba-react-scripts 2723152 2.2.50 12783096 @babel/preset-env NPM runtime False ^7.0.0 2511107.0
+77162135 NPM kiaba-react-scripts 2723152 2.2.50 12783096 @babel/runtime NPM runtime False ^7.0.0 2512978.0
+77162151 NPM kiaba-react-scripts 2723152 2.2.50 12783096 ajv NPM runtime False ^6.4.0 808490.0
