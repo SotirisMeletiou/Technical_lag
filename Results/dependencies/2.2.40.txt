@@ -1,0 +1,13 @@
+77139755 NPM kiaba-react-scripts 2723152 2.2.40 12780571 case-sensitive-paths-webpack-plugin NPM runtime False 2.1.1 1224878.0
+77139783 NPM kiaba-react-scripts 2723152 2.2.40 12780571 chalk NPM runtime False 1.1.3 134974.0
+77139903 NPM kiaba-react-scripts 2723152 2.2.40 12780571 eslint NPM runtime False 4.10.0 145391.0
+77139873 NPM kiaba-react-scripts 2723152 2.2.40 12780571 dotenv-expand NPM runtime False 4.2.0 1158062.0
+77139582 NPM kiaba-react-scripts 2723152 2.2.40 12780571 ajv NPM runtime False ^6.4.0 808490.0
+77139642 NPM kiaba-react-scripts 2723152 2.2.40 12780571 babel-eslint NPM runtime False 7.2.3 684245.0
+77139659 NPM kiaba-react-scripts 2723152 2.2.40 12780571 babel-jest NPM runtime False 20.0.3 570160.0
+77139729 NPM kiaba-react-scripts 2723152 2.2.40 12780571 babel-preset-kiaba-react-app NPM runtime False ^3.1.5 2743731.0
+77139543 NPM kiaba-react-scripts 2723152 2.2.40 12780571 @babel/runtime NPM runtime False ^7.0.0-beta.44 2512978.0
+77139810 NPM kiaba-react-scripts 2723152 2.2.40 12780571 css-loader NPM runtime False 0.28.7 276649.0
+77139595 NPM kiaba-react-scripts 2723152 2.2.40 12780571 autoprefixer NPM runtime False 7.1.6 129882.0
+77139710 NPM kiaba-react-scripts 2723152 2.2.40 12780571 babel-loader NPM runtime False 8.0.0-beta.2 570156.0
+77139815 NPM kiaba-react-scripts 2723152 2.2.40 12780571 dotenv NPM runtime False 4.0.0 142776.0
